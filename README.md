@@ -14,7 +14,7 @@ The subclasses of Convolve are specified by how the edge handling works, and inc
 ```ConvolveZero``` - Returns the color black when handling edges.
 ```ConvolveWrap``` - Returns a pixel from the oppopsite edge when handling edges.
 ```ConvolveReflect``` - Returns a pixel mirrored by the distance from the edge when handling edges.
-```ConvolveReflect``` Is recommended for most cases.
+```ConvolveReflect``` is recommended for most cases.
 
 The subclasses of Kernel are specified by what values are in it's matrix, and include the following:
 ```BlurKernel``` - All values in kernel are equal and are a fraction of the kernel's size .
