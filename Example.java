@@ -8,14 +8,20 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * Tests two Convolve and Kernel subclasses, then
+ * paints the original and convolved image.
+ * 
+ * @author Mike Fitzgibbon
+ */
 public class Example {
     static BufferedImage original, filtered;
     public static void main(String[] args) {
-        Convolution conv = new Convolution(new Kernel(Kernel.PREWITT_VERT, 10), Convolution.DO_NOTHING);
+        Convolve conv = new ConvolveReflect(new EmbossKernel(11));
         original = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         try{
-            original = ImageIO.read(new File("a.jpeg"));
-            filtered = conv.convolve(original);
+            original = ImageIO.read(new File("c.jpg"));
+            filtered = conv.filter(original);
         }
         catch(IOException e){
             System.out.println("File not found.");
@@ -27,6 +33,7 @@ public class Example {
             public void paintComponent(Graphics g){
                 super.paintComponent(g);
                 g.drawImage(filtered, 0, 0, null);
+                g.drawImage(original, 0, filtered.getHeight(), null);
             }
         };
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
