@@ -1,6 +1,7 @@
 This library can do all sorts of convolutions with more edge handling than the Standard Java Library. 
 It requires the use of a subclass of ```Convolve```, and a subclass of ```Kernel```, or, optionally, 
-use the ```Kernel``` class to use a custom matrix for the ```Kernel```.
+use the ```Kernel``` class to use a custom matrix for the ```Kernel``` provided a 2D array
+of doubles.
 Here is an example:
 ```
 Convolve conv = new ConvolveReflect(new BlurKernel(10));
@@ -26,5 +27,3 @@ The subclasses of Kernel are specified by what values are in it's matrix, and in
 The Prewitt, Sobel and Scharr ```Kernel```s can be specified horizontally or vertically, and always
       contain a 3x3 matrix.
 
-The ```Kernel``` constructor can be used to make a custom matrix for convolutions provided a 2d array
-of doubles.
