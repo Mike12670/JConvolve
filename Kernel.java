@@ -23,7 +23,7 @@ public class Kernel {
      * Creates a matrix for a kernel based on type.
      * @param diameter The degree to which the convolution is applied
      */
-    public Kernel(int diameter){
+    protected Kernel(int diameter){
         this.diameter = diameter;
         matrix = new double[diameter][diameter];
     }
