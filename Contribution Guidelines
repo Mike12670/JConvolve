@@ -1,0 +1,6 @@
+-----------------------------------------------------------------------------------------------------
+RULES
+-----------------------------------------------------------------------------------------------------
+Do not change the method by which the images are convolved unless you can make the algorithm faster.
+Every new type of Kernel shall be distinct from the other kernels. All Kernels must have different
+formulas. All work must be put on a separate Git branch before it can be accepted into the library.

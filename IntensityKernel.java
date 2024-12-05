@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
  * Creates diameter and intensity for a kernel.
@@ -13,11 +13,11 @@ public class IntensityKernel extends Kernel{
     protected final double intensity;
 
     /**
-     * @param diameter The size of the kernel.
+     * @param n The size of the kernel.
      * @param intensity The degree to which the kernel is applied.
      */
-    public IntensityKernel(int diameter, double intensity) {
-        super(diameter);
+    public IntensityKernel(int n, double intensity) {
+        super(n);
         this.intensity = intensity;
     }
 

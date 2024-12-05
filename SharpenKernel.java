@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
  * Creates sharpening kernel.

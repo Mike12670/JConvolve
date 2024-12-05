@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
  * Creates predefined Scharr kernel with vertical alignment.

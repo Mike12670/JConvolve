@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
  * Creates embossing kernel. Embossing kernels are positive around

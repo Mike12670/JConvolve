@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
  * Creates blur kernel. Blur kernels all have the 
@@ -11,13 +11,13 @@ public class BlurKernel extends Kernel{
 
     /**
      * Images are blurrier with a higher diameter.
-     * @param diameter The size of the kernel.
+     * @param n The size of the kernel.
      */
-    public BlurKernel(int diameter) {
-        super(diameter);
+    public BlurKernel(int n) {
+        super(n);
         for(int my = 0 ; my < matrix[0].length ; my++){
             for (double[] matrix1 : matrix) {
-                matrix1[my] = 1.0 / diameter / diameter;
+                matrix1[my] = 1.0 / n / n;
             }
         }
     }

@@ -1,5 +1,5 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 import java.awt.image.BufferedImage;
 
@@ -41,12 +41,14 @@ public abstract class Convolve {
      */
     protected int getConvolvedPixel(int imgX, int imgY, BufferedImage in){
         double a = 0, r = 0, g = 0, b = 0;
-        for(int matrixY = 0 ; matrixY < kernel.diameter ; matrixY++){
-            for(int matrixX = 0 ; matrixX < kernel.diameter ; matrixX++){
-                int indexX = imgX + matrixX - kernel.diameter / 2, 
-                        indexY = imgY + matrixY - kernel.diameter / 2;
+        for(int matrixY = 0 ; matrixY < kernel.n ; matrixY++){
+            for(int matrixX = 0 ; matrixX < kernel.n ; matrixX++){
+                
+                int indexX = imgX + matrixX - kernel.n / 2, 
+                        indexY = imgY + matrixY - kernel.n / 2;
                 int c = getPixel(indexX, indexY, in);
                 double ff = kernel.getMatrix()[matrixX][matrixY];
+                
                 a += ff * ((c >> 24) & 0xff);
                 r += ff * ((c >> 16) & 0xff);
                 g += ff * ((c >> 8) & 0xff);

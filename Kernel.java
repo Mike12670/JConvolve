@@ -1,9 +1,10 @@
 
-package mikefitzgibbon.convolutions;
+package lightanvil.jconvolve;
 
 /**
- * Kernel subclasses specify the kernel matrix values, 
- *  and includes BlurKernel, GaussBlurKernel, 
+ * Kernel subclasses specify the formula for the
+ * kernel matrix values, and includes 
+ * BlurKernel, GaussBlurKernel, 
  *  SharpenKernel, EmbossKernel,
  *  PrewittHorzKernel, PrewittVertKernel, 
  *  ScharrHorzKernel, ScharrVertKernel,
@@ -17,15 +18,15 @@ public class Kernel {
     /**
      * int diameter is the size of the kernel.
      */
-    protected int diameter;
+    protected int n;
     
     /**
      * Creates a matrix for a kernel based on type.
-     * @param diameter The degree to which the convolution is applied
+     * @param n The degree to which the convolution is applied
      */
-    protected Kernel(int diameter){
-        this.diameter = diameter;
-        matrix = new double[diameter][diameter];
+    protected Kernel(int n){
+        this.n = n;
+        matrix = new double[n][n];
     }
 
     /**
@@ -34,7 +35,7 @@ public class Kernel {
      */
     public Kernel(double[][] matrix) {
         this.matrix = matrix;
-        this.diameter = matrix.length;
+        this.n = matrix.length;
     }
 
     /**
@@ -49,7 +50,7 @@ public class Kernel {
      * Gets diameter
      * @return The size of the kernel
      */
-    public int getDiameter() {
-        return diameter;
+    public int getN() {
+        return n;
     }
 }
