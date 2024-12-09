@@ -1,6 +1,5 @@
 package lightanvil.jconvolve;
 
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import static lightanvil.jconvolve.Panel.panel;
 import static lightanvil.jconvolve.TestMain.frame;
 
 /**
@@ -17,18 +17,18 @@ import static lightanvil.jconvolve.TestMain.frame;
  */
 public class OpenFile extends JButton{
 
-    public OpenFile(Panel panel) {
+    public OpenFile() {
         super("Open");
         addActionListener(e -> {
             JFileChooser fc = new JFileChooser();
             if(fc.showOpenDialog(frame) == JFileChooser.APPROVE_OPTION){
-                File f = fc.getSelectedFile();
-                panel.setImage(readImage(f));
+                panel.setImage(readImage(fc.getSelectedFile()));
+                panel.convolve();
             }
         });
     }
     
-    public BufferedImage readImage(File f){
+    private BufferedImage readImage(File f){
         try{
             return ImageIO.read(f);
         }

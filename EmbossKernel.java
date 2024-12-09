@@ -11,11 +11,11 @@ package lightanvil.jconvolve;
  */
 public class EmbossKernel extends Kernel{
 
-    public EmbossKernel(int diameter) {
-        super(diameter);
-        for(int y = 0 ; y < diameter ; y++){
-            for(int x = 0 ; x < diameter ; x++){
-                matrix[x][y] = x + y + 1 - diameter;
+    public EmbossKernel(int n) {
+        super(n);
+        for(int y = 0 ; y < n ; y++){
+            for(int x = 0 ; x < n ; x++){
+                matrix[x][y] = x + y + 1 - n;
             }
         }
     }

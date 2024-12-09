@@ -2,6 +2,7 @@
 package lightanvil.jconvolve;
 
 import java.awt.image.BufferedImage;
+import static lightanvil.jconvolve.Kernel.kernel;
 
 /**
  * Convolve subclasses specify the edge handling cases, 
@@ -11,10 +12,8 @@ import java.awt.image.BufferedImage;
  * @author Mike Fitzgibbon
  */
 public abstract class Convolve {
-    protected final Kernel kernel;
 
-    public Convolve(Kernel kernel) {
-        this.kernel = kernel;
+    public Convolve() {
     }
     
     /**

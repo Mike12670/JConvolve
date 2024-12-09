@@ -18,10 +18,9 @@ public class GaussBlurKernel extends IntensityKernel{
         super(n, intensity);
         for(int y = 0 ; y < n ; y++){
             for(int x = 0 ; x < n ; x++){
-                matrix[x][y] -= 1.0 / 
-                        (x < n / 2 ? x : n - x + 
-                        y < n / 2 ? y : n - y)
-                        / n;
+                matrix[x][y] = Math.pow(Math.E, 
+                        -((Math.pow(x, 2) + Math.pow(y, 2))/(2*Math.pow(intensity, 2)))) 
+                        / (2 * Math.PI * Math.pow(intensity, 2));
             }
         }
     }

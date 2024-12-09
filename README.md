@@ -26,5 +26,5 @@ The subclasses of Kernel are specified by what values are in its matrix, and inc
       for the center value, which is one plus that (negative) fraction.
 The Prewitt, Sobel and Scharr ```Kernel```s can be specified horizontally or vertically, and always
       contain a 3x3 matrix. All other subclasses of ```Kernel``` require you to construct them with
-      an ```int``` for the size of the ```Kernel```, or N, and sometimes, a ```double``` for the 
+      an ```int``` for the size of the ```Kernel```, and sometimes, a ```double``` for the 
       intensity.

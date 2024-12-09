@@ -3,7 +3,7 @@ package lightanvil.jconvolve;
 
 /**
  * Creates blur kernel. Blur kernels all have the 
- * same value: 1 divided by the matrix's diameter squared.
+ * same value: 1 divided by n squared.
  * 
  * @author Mike Fitzgibbon
  */

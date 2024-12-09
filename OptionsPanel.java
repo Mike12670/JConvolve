@@ -1,18 +1,9 @@
 package lightanvil.jconvolve;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import static lightanvil.jconvolve.TestMain.frame;
+import static lightanvil.jconvolve.Panel.panel;
 
 /**
  *
@@ -20,15 +11,21 @@ import static lightanvil.jconvolve.TestMain.frame;
  */
 public class OptionsPanel extends JPanel{
 
-    public OptionsPanel(Panel panel) {
+    public OptionsPanel() {
+        add(new JLabel("File: "));
+        add(new OpenFile());
+        add(new JLabel("Kernel type: "));
+        add(new KernelDropDown());
+        add(new JLabel("Edges of image: "));
+        add(new ConvolveDropDown());
+        add(new JLabel("N: "));
+        add(new NField());
+        add(new JLabel("Intensity: "));
+        add(new IntensityField());
         JButton go = new JButton("Go");
-        go.addActionListener(e ->{
+        go.addActionListener(e -> {
             panel.convolve();
         });
-        
-        add(new OpenFile(panel));
-        add(new KernelDropDown(panel));
-        add(new EdgeDropDown(panel));
         add(go);
     }
 

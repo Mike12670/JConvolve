@@ -4,6 +4,8 @@
 
 package lightanvil.jconvolve;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author gmf33
@@ -11,6 +13,8 @@ package lightanvil.jconvolve;
 public class TestMain {
     static Frame frame;
     public static void main(String[] args) {
-        frame = new Frame();
+        SwingUtilities.invokeLater(() -> {
+            frame = new Frame();
+        });
     }
 }

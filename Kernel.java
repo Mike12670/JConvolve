@@ -13,7 +13,9 @@ package lightanvil.jconvolve;
  * @author Mike Fitzgibbon
  */
 public class Kernel {
+    static Kernel kernel;
     protected double matrix[][];
+    
     
     /**
      * int diameter is the size of the kernel.
